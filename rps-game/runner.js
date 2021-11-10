@@ -8,6 +8,14 @@ const btns = document.querySelectorAll('.btn');
 //get win totals
 const humanWinTotalEle = document.querySelector('.human-wins-tally');
 const cpuWinTotalEle = document.querySelector('.cpu-wins-tally');
+//get ul element to append li
+const gameHistoryListEle = document.querySelector('.game-history-list');
+
+const updateMessageState = (message) => {
+  const listItem = document.createElement('li');
+  listItem.appendChild(document.createTextNode(message));
+  gameHistoryListEle.appendChild(listItem);
+};
 
 const updateWinTotalState = (winner) => {
   if (winner.toUpperCase() === 'CPU') {
@@ -20,6 +28,7 @@ const updateWinTotalState = (winner) => {
 const updateState = (results) => {
   const { winner, message } = results;
   updateWinTotalState(winner);
+  updateMessageState(message);
 };
 
 const playRound = (humanMove) => {
