@@ -11,19 +11,17 @@
 body {
   height: 100vh;
   font-family: 'Roboto', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
 }
 
 .game-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .human-player-container,
 .cpu-player-container {
-  margin: 1rem 2rem;
+  margin: 4rem;
 }
 
 .human-player-container {
@@ -35,8 +33,12 @@ h3 {
   text-align: center;
 }
 
+.think,
 .btn {
-  margin: 1rem 0.5rem 1rem 0rem;
+  margin: 3rem 0.5rem 1rem 0rem;
+}
+
+.btn {
   border: none;
   background-color: rgb(89, 79, 198);
   padding: 0.5rem 1rem;
@@ -49,4 +51,19 @@ h3 {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.game-history-total-wins {
+  margin: 2rem 0rem;
+}
+
+.human-wins-tally,
+.cpu-wins-tally {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+
+li {
+  margin-top: 0.7rem;
 }
