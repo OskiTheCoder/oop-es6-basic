@@ -7,15 +7,17 @@ export class PokeFetch {
 
   // TODO -> add better error handling/catching
   async fetchRandomPokemon() {
-    const randomInt = Math.floor(Math.random() * 151);
-    const response = await fetch(
-      `https://pokeapi.co/api/v2/pokemon/${randomInt}/`
-    );
-    if (!response.ok) {
-      throw new Error('Error! Could not get pokemon :(');
+    try {
+      const randomInt = Math.floor(Math.random() * 151);
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon/${randomInt}/`
+      );
+      console.log(response.ok);
+      const pokemon = await response.json();
+      return pokemon;
+    } catch (err) {
+      console.error(err);
     }
-    const pokemon = await response.json();
-    return pokemon;
   }
 
   async getPokemon() {

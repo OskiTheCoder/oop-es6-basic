@@ -33,8 +33,9 @@ const displayPokemon = (pokemon) => {
   heightSpan.appendChild(document.createTextNode(`Height: ${pokemon.height}`));
 };
 
-getNewPokemonBtn.addEventListener('click', () => {
-  pokeFetch.getPokemon().then((pokemon) => displayPokemon(pokemon));
+getNewPokemonBtn.addEventListener('click', async () => {
+  const pokemon = await pokeFetch.getPokemon();
+  displayPokemon(pokemon);
 });
 
 // pokeFetch.getPokemon().then((pokemon) => {
